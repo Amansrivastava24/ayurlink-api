@@ -18,8 +18,8 @@ The portal allows clinical practitioners, researchers, and developers to search 
 
 ## Tech Stack
 
-* **Backend**: FastAPI (Python), SQLModel (SQLAlchemy wrapper), Uvicorn, PostgreSQL (Render) / SQLite.
-* **Frontend**: React.js, Vite, TypeScript, Lucide Icons, Vanilla CSS.
+* **Backend**: FastAPI (Python), SQLModel (SQLAlchemy wrapper), Uvicorn, PostgreSQL (Render) .
+* **Frontend**: React.js, Vite
 * **Data Layer**: Pandas & openpyxl for clean ingestion of Excel terminology definitions and `final_mappings.csv` files.
 
 ---
@@ -56,10 +56,6 @@ Ayurlink/
 
 ### 1. Database Configuration
 Rename `.env.example` to `.env` in the root folder, and set your active database connection:
-* **SQLite (Default / Zero-Setup)**:
-  ```env
-  DATABASE_URL="sqlite:///ayurlink.db"
-  ```
 * **PostgreSQL (Cloud / Remote)**:
   ```env
   DATABASE_URL="postgresql://[user]:[password]@[host]:[port]/[dbname]?sslmode=require"
