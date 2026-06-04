@@ -3,7 +3,14 @@ from app.core.config import settings
 
 # Create the database engine using the URL from our settings
 # connect_args is needed for SQLite, but good practice to keep for other DBs
-engine = create_engine(str(settings.DATABASE_URL), echo=True)
+if str(settings.DATABASE_URL).startswith("sqlite"):
+    engine = create_engine(
+        str(settings.DATABASE_URL),
+        echo=False,
+        connect_args={"check_same_thread": False}
+    )
+else:
+    engine = create_engine(str(settings.DATABASE_URL), echo=False)
 
 def init_db():
     """
